@@ -16,6 +16,7 @@ players select a category and then are given random words from the api
 <br>
 
 ## run it normally:
+- pipenv install
 - pipenv shell
 - flask run
 - http://127.0.0.1:5000 
@@ -80,6 +81,11 @@ The basic game homescreen with btns
 eg: /api/ person
 ```
 ["MJ","King Arthur","Michael Jackson","Alfred the Great","Johnny Depp"]
+```
+### /api/ + topic/ + int (index)
+eg: /api/ person / 1
+```
+"King Arthur"
 ```
 
 ### /api/random
