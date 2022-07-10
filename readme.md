@@ -37,7 +37,7 @@ from within the pipenv shell:
 
 - The DB is a *dictionary*
 - *keys* = the topics ''
-- *value* = *list* [] of all the words belonging to the category
+- *value* = *list* [] of all the words (*string*) belonging to the topic
 ```
 Articulate_db={
     'person':['MJ','King Arthur','Michael Jackson','Alfred the Great', 'Johnny Depp'],
