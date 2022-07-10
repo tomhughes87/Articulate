@@ -2,7 +2,7 @@
 
 class TestAPICase():
     def test_all_topics(self, api):
-        res = api.get('/api/all')
+        res = api.get('/api/topics')
         assert res.status == '200 OK'
         assert res.json == ["person","world","object","action","nature"]
 
@@ -14,7 +14,7 @@ class TestAPICase():
     def test_get_word(self, api):
         res = api.get('/api/nature/1')
         assert res.status == '200 OK'
-        assert res.json == 'Leaf'
+        assert res.json == ['Leaf']
 
     
 
