@@ -104,8 +104,8 @@ This will be different on every refresh
 <br>
 
 - Failing tests:
+    - PATCH
     - CREATE
-    - PATACH
 
 ![image](https://user-images.githubusercontent.com/91187363/178158063-c64ed096-d0a4-4eb8-914b-23840d64e8ef.png)
 
