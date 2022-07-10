@@ -1,5 +1,8 @@
 # import json
 
+import json
+
+
 class TestAPICase():
 
 # ////////////////////////
@@ -24,7 +27,7 @@ class TestAPICase():
         assert res.status == '200 OK'
         assert len(res.json) == 2
     # 4
-    def test_get_nature(self, api):
+    def test_get_world(self, api):
         res = api.get('/api/world')
         assert res.status == '200 OK'
         assert len(res.json) == 2
@@ -56,35 +59,56 @@ class TestAPICase():
         res = api.get('/api/nature/1')
         assert res.status == '200 OK'
         assert res.json[0] == 'Leaf'
+    # 9
+    def test_get_random(self, api):
+        res = api.get('/api/random')
+        assert res.status == '200 OK'
+        assert len(res.json) == 10
 
-    
+    # 10
+    def test_get_no_rand_double(self,api):
+        res= api.get('api/random')
+        json_to_set = set(res.json)  
+        assert len(json_to_set) == len(res.json) #by converting the json to set it removes any doubles
+
+# ////////////////////////
+# DELETE TESTS-----------------------------------
+# ////////////////////////
+    # 11
+    def test_destroy_word(self,api):
+        res = api.delete('/api/action/1')
+        assert res.status == '204 NO CONTENT'
+
+# ////////////////////////
+# PATCH TESTS-----------------------------------BROKEN
+# ////////////////////////
+    #12
+    def test_patch_word(self, api):
+            mock_data = json.dumps('Car')
+            mock_headers = {'Content-Type': 'application/json'}
+            # res = api.patch('/api/nature/1', data=mock_data)
+            res = api.patch('/api/nature/1', data=mock_data, headers=mock_headers)
+            # assert res.json['id'] == 2
+            assert res.json[0] == 'Car'
 
 
+# ////////////////////////
+# CREATE TESTS-----------------------------------BROKEN
+# ////////////////////////
+    #13
+    def test_post_word(self, api):
+        original_api= api.get('/api/object')
+        print(original_api.json)
+        mock_data = json.dumps(['banana'])
+        mock_headers = {'Content-Type': 'application/json'}
+        res = api.post('/api/object', data=mock_data, headers=mock_headers)
+        print('after posting:',  original_api.json)
+        assert len(original_api.json) == 3
 
-
-    # def test_get_word_error(self, api):
-    #     res = api.get('/api/world/4')
-    #     assert res.status == '400 BAD REQUEST'
-
-
-    # def test_post_cats(self, api):
-    #     mock_data = json.dumps({'name': 'Molly'})
-    #     mock_headers = {'Content-Type': 'application/json'}
-    #     res = api.post('/api/cats', data=mock_data, headers=mock_headers)
-    #     assert res.json['id'] == 3
-
-    # def test_patch_cat(self, api):
-    #     mock_data = json.dumps({'name': 'Molly'})
-    #     mock_headers = {'Content-Type': 'application/json'}
-    #     res = api.patch('/api/cats/2', data=mock_data, headers=mock_headers)
-    #     assert res.json['id'] == 2
-    #     assert res.json['name'] == 'Molly'
-
-    # def test_delete_cat(self, api):
-    #     res = api.delete('/api/cats/1')
-    #     assert res.status == '204 NO CONTENT'
-
-    # def test_not_found(self, api):
-    #     res = api.get('/bob')
-    #     assert res.status == '404 NOT FOUND'
-    #     assert 'Oops!' in res.json['message']
+# ////////////////////////
+# MISC TESTS-----------------------------------
+# ////////////////////////
+    # 14
+    def test_homepage_status(self,api):
+        res = api.get ('/')
+        assert res.status == "200 OK"

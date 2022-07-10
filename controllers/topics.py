@@ -21,27 +21,17 @@ print('the list after', Articulate_db['nature'] )
 
 def gen_random_list(req):
     random_list = []
-    for c in range (10):
-        c=+1
-        random_list.append(random.choice(Articulate_db[random.choice(list(Articulate_db))]))
+    c=0
+    while c in range (10):
+        new_random_word = random.choice(Articulate_db[random.choice(list(Articulate_db))])
+        if new_random_word in random_list:
+            c=c
+        else:
+            c+=1
+            random_list.append(new_random_word)
+    sorted(random_list[0])
     return [random_list][0], 200
-
-def checklist(func):
-    def wrapper(*args,**kwargs):
-        print('person:', Articulate_db['person'])
-        func(*args,**kwargs)
-        print('person:', Articulate_db['person'])
-    return wrapper
     
-@checklist
-def delete(del_item):    
-    if del_item in Articulate_db['person']:
-        Articulate_db['person'].remove(del_item),
-        print(del_item,'has been deleted.')
-    else:
-        print(del_item,'is not in the database')
-# delete(input('What do you want to delete?'))
-
 def all(req): 
     return [Articulate_db], 200
 
@@ -66,3 +56,25 @@ def update(req,usertop,idx):
 
 def getword(req,usertop,idx):
     return [Articulate_db[usertop][idx]], 200
+
+
+
+
+
+# THIS WAS AN OLD DELETE TEST WITH USER INPUT/////////////////
+# def checklist(func):
+#     def wrapper(*args,**kwargs):
+#         print('person:', Articulate_db['person'])
+#         func(*args,**kwargs)
+#         print('person:', Articulate_db['person'])
+#     return wrapper
+    
+# @checklist
+# def delete(del_item):    
+#     if del_item in Articulate_db['person']:
+#         Articulate_db['person'].remove(del_item),
+#         print(del_item,'has been deleted.')
+#     else:
+#         print(del_item,'is not in the database')
+# # delete(input('What do you want to delete?'))
+# /////////////////////////////////////

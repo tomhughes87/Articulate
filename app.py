@@ -60,20 +60,5 @@ def indexword(usertopic,idx):
     resp, code = fns[request.method](request,usertopic,idx)
     return jsonify(resp), code
 
-
-
-@app.route('/game/<string:topic>')
-def game(topic):
-    fns = {
-        'GET': topics.topic,
-        # 'POST': topics.create
-    }
-    resp, code = fns[request.method](request)    
-    return render_template('game.html')
-
-
-
-
-
 if __name__ == "__main__":
     app.run(debug=True)
