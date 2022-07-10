@@ -96,13 +96,18 @@ This will be different on every refresh
 
 <br>
 
-- 10/12 pass
+![image](https://user-images.githubusercontent.com/91187363/178158080-13334f41-d489-4a4a-8fc6-cf43b35a577e.png)
+
+- 12/14 pass
 - 98% coverage
+
+<br>
 
 - Failing tests:
     - CREATE
     - PATACH
 
+![image](https://user-images.githubusercontent.com/91187363/178158063-c64ed096-d0a4-4eb8-914b-23840d64e8ef.png)
 
 
 <br>
