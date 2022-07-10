@@ -13,12 +13,10 @@ print(Articulate_db)
 print('\n\n\n\n\n')
 print('the list before', Articulate_db['nature']) 
 print('a single word from topics', Articulate_db['nature'][2])
-updatethisword = input('what is you new word?')
-Articulate_db['nature'][2] = updatethisword
+# updatethisword = input('what is you new word?')
+# Articulate_db['nature'][2] = updatethisword
 print('a edited single word from topics', Articulate_db['nature'][2]) 
 print('the list after', Articulate_db['nature'] )
-
-
 
 
 def gen_random_list(req):
@@ -42,7 +40,7 @@ def delete(del_item):
         print(del_item,'has been deleted.')
     else:
         print(del_item,'is not in the database')
-delete(input('What do you want to delete?'))
+# delete(input('What do you want to delete?'))
 
 def all(req): 
     return [Articulate_db], 200
