@@ -4,4 +4,15 @@
 
 <h1>THIS IS MY HOMEPAGE!</h1>
 
+<div class="btn_topic_container">
+    <div class="btn_topic btn_person" onclick="window.location='/api/person';">Person</div>
+    <div class="btn_topic btn_world"  onclick="window.location='/api/world';">World</div>
+    <div class="btn_topic btn_object" onclick="window.location='/api/object';">Object</div>
+    <div class="btn_topic btn_action" onclick="window.location='/api/action';">Action</div>
+    <div class="btn_topic btn_nature" onclick="window.location='/api/nature';">Nature</div>
+    <div class="btn_topic btn_random" onclick="window.location='/api/random';">Random</div>
+</div>
+
 {% endblock %}
+
+<div class="btn_topic btn_action"  href="{{ url_for('game',var=action) }}">Action</div>

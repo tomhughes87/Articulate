@@ -1,14 +1,23 @@
 from flask import Flask, render_template, url_for, jsonify, request
-from controllers import topics
 from flask_cors import CORS
+from controllers import topics
+# from werkzeug import exceptions
 
 app = Flask(__name__)
 CORS(app)
 
-
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/api/random')
+def random_api():
+    fns = {
+        'GET': topics.gen_random_list,
+        
+    }
+    resp, code = fns[request.method](request)    
+    return jsonify(resp), code
 
 @app.route('/api/all')
 def index():
@@ -28,34 +37,43 @@ def try1():
     resp, code = fns[request.method](request)
     return jsonify(resp), code
 
-@app.route('/api/person')
-def try2():
-    fns = {
-        'GET': topics.person,
-        # 'POST': topics.create
-    }
-    resp, code = fns[request.method](request)
-    return jsonify(resp), code
-
-@app.route('/api/<string:usertopic>')
+@app.route('/api/<string:usertopic>',  methods=['GET', 'POST', 'DELETE'])
 def tryingvar(usertopic):
     print(usertopic)
     
     fns = {
         'GET': topics.dy,
-        # 'POST': topics.create
+        'POST': topics.create,
+        # 'PATCH': topics.update,
     }
     resp, code = fns[request.method](request,usertopic)
     return jsonify(resp), code
 
 
-# @app.route('/api/cats/<int:cat_id>', methods=['GET', 'PATCH', 'PUT', 'DELETE'])
-# def cat_handler(cat_id):
-#     fns = {
-#         'GET': topics.show,
-#         # 'PATCH': cats.update,
-#         # 'PUT': cats.update,
-#         # 'DELETE': cats.destroy
-#     }
-#     resp, code = fns[request.method](request, cat_id)
-#     return jsonify(resp), code
+@app.route('/api/<string:usertopic>/<int:idx>', methods=['GET','DELETE', 'PATCH'])
+def indexword(usertopic,idx):
+    fns = {
+        'GET':topics.getword,
+        'DELETE': topics.destroy,
+        'PATCH': topics.update,
+    }
+    resp, code = fns[request.method](request,usertopic,idx)
+    return jsonify(resp), code
+
+
+
+@app.route('/game/<string:topic>')
+def game(topic):
+    fns = {
+        'GET': topics.topic,
+        # 'POST': topics.create
+    }
+    resp, code = fns[request.method](request)    
+    return render_template('game.html')
+
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

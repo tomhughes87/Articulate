@@ -7,8 +7,13 @@ name = "pypi"
 flask = "*"
 cors = "*"
 flask-cors = "*"
+pytest = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+dev = "bash -c \"export FLASK_ENV='development' && flask run\""
+test = "pytest ."

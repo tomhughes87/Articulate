@@ -1,3 +1,71 @@
+body{
+    background-color: rgb(255, 255, 255);
+    font-family:'Trebuchet MS', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+
+.word_container{
+    border-radius: 20%;
+    width: 80%;
+    height: 60%;
+    background-color: rgb(139, 94, 94);
+}
+
+
 h1{
-    background-color: yellowgreen;
+    background-color: rgb(167, 127, 85);
+}
+
+
+.btn_topic_container{
+    font-size: x-large;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -3%;
+}
+
+
+
+
+.btn_topic{
+    height: 50px;
+    width: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: black;
+    margin: 4px;
+    text-align: center;
+    line-height: 50px;
+    justify-content: center;
+}
+
+.btn_topic:hover{
+    cursor: pointer;
+}
+
+.btn_topic:active{
+    opacity: 0.7;
+}
+
+.btn_person{
+    background-color: rgb(248, 255, 42);
+}
+.btn_world{
+    background-color: rgb(84, 84, 239);
+}
+.btn_object{
+    background-color: rgb(141, 183, 225);
+}
+.btn_action{
+    background-color: rgb(234, 176, 50);
+}
+.btn_nature{
+    background-color: rgb(113, 223, 124);
+}
+.btn_random{
+    background-color: rgb(235, 66, 66);
 }
