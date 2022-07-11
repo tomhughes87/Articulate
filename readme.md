@@ -22,6 +22,10 @@ players select a category and then are given random words from the api
 - http://127.0.0.1:5000 
 ....anything else? please let me know
 
+or:
+- pipenv shell
+- pipenv install
+
 
 ## running test
 from within the pipenv shell:
