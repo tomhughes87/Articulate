@@ -29,9 +29,9 @@ or:
 
 ## running test
 from within the pipenv shell:
-- pytest --cov-report term-missing --cov=.
-- pytest 
-- pytest -s (a back-up, use this if using *input()*)
+- ***pytest --cov-report term-missing --cov=.***  or   ***pipenv run testc***
+- ***pytest*** 
+- ***pytest -s*** (a back-up, use this if using *input()*)
 
 <br>
 <hr>
