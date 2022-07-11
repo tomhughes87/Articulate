@@ -80,7 +80,7 @@ class TestAPICase():
         assert res.status == '204 NO CONTENT'
 
 # ////////////////////////
-# PATCH TESTS-----------------------------------BROKEN
+# PATCH TESTS------------------------------FIXED, THANKS GIO
 # ////////////////////////
     #12
     def test_patch_word(self, api):
@@ -94,7 +94,7 @@ class TestAPICase():
 
 
 # ////////////////////////
-# CREATE TESTS-----------------------------------BROKEN
+# CREATE TESTS-----------------------------FIXED, THANKS GIO
 # ////////////////////////
     #13
     def test_post_word(self, api):
