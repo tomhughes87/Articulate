@@ -20,4 +20,3 @@ python_version = "3.9"
 dev = "bash -c \"export FLASK_ENV='development' && flask run\""
 test = "pytest ."
 testc ='pytest --cov-report term-missing --cov=.'
-start = "gunicorn app:app"

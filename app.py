@@ -1,4 +1,4 @@
-from crypt import methods
+
 from random import random
 from flask import Flask, render_template, url_for, jsonify, request
 from flask_cors import CORS
@@ -35,16 +35,16 @@ def home():
 # def game_random():
 #     return render_template('game.html')
 
-@app.route('/<string:topic>')
-def round_list (topic, methods=['GET']):
-    fns = {
-        'GET': topics.gen_round_list,
+# @app.route('/<string:topic>')
+# def round_list (topic, methods=['GET']):
+#     fns = {
+#         'GET': topics.gen_round_list,
         
-    }
-    round_db = {}
-    c = 0
-    while c < 3:
-        random.c
+#     }
+    # round_db = {}
+    # c = 0
+    # while c < 3:
+    #     random.c
 
 
     return render_template('game.html', topic_header = topic)

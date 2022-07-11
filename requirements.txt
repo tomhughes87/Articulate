@@ -13,6 +13,7 @@ Flask-Cors==3.0.10
 future==0.18.2
 gevent==21.12.0
 greenlet==1.1.2
+gunicorn==20.1.0
 idna==3.3
 iniconfig==1.1.1
 itsdangerous==2.1.2
@@ -33,7 +34,6 @@ six==1.16.0
 tldextract==3.3.1
 tomli==2.0.1
 urllib3==1.26.10
-waitress==2.1.2
 Werkzeug==2.1.2
 zope.event==4.5.0
 zope.interface==5.4.0
