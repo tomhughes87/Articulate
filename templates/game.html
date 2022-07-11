@@ -2,14 +2,18 @@
 
 {% block myshit %}
 
+<div class="btn_topic ">CLICK HERE WHEN TIMES UP!</div>
 
-<div btn_topic_container>
-    <div class="btn_topic btn_person">Person</div>
+<div class="btn_topic_container">
+    <div class="btn_topic btn_{{topic_header}}">{{topic_header.title()}}</div>
 </div>
 
 <div class="word_container">
-Michael Jackson
 
+    Michael Jackson
+
+
+<p>{{my_var}}</p>
 </div>
 
 {% endblock %}

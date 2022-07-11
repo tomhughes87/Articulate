@@ -115,3 +115,17 @@ class TestAPICase():
     def test_homepage_status(self,api):
         res = api.get ('/')
         assert res.status == "200 OK"
+
+# ////////////////////////
+# ERRO TESTS-----------------------------------
+# ////////////////////////
+    # 15
+    def test_endpoint_index_no_match(self,api):
+        res = api.get ('/api/nature/7')
+        assert res.status == '404 NOT FOUND'
+        # assert res.status == "500 INTERNAL SERVER ERROR"
+
+    # def test_not_found(self, api):
+    #     res = api.get('/bob')
+    #     assert res.status == '404 NOT FOUND'
+

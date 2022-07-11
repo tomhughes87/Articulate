@@ -55,8 +55,12 @@ def update(req,usertop,idx):
     return idx,204
 
 def getword(req,usertop,idx):
-    return [Articulate_db[usertop][idx]], 200
+    if [Articulate_db[usertop][idx]] == False:
+        return [Articulate_db[usertop][idx]],404
+    else:
+        return [Articulate_db[usertop][idx]], 200
 
+# def gen_round_list(req,):
 
 
 
