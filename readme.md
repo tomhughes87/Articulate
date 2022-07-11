@@ -29,9 +29,9 @@ or:
 
 ## running test
 from within the pipenv shell:
-- pytest --cov-report term-missing --cov=.
-- pytest 
-- pytest -s (a back-up, use this if using *input()*)
+- ***pytest --cov-report term-missing --cov=.***  or   ***pipenv run testc***
+- ***pytest*** 
+- ***pytest -s*** (a back-up, use this if using *input()*)
 
 <br>
 <hr>
@@ -106,18 +106,23 @@ This will be different on every refresh
 
 <br>
 
-![image](https://user-images.githubusercontent.com/91187363/178158080-13334f41-d489-4a4a-8fc6-cf43b35a577e.png)
+![image](https://user-images.githubusercontent.com/91187363/178240689-b10c850b-8893-4e1a-a51f-05c3f4469f76.png)
 
-- 12/14 pass
+- 14/14 pass
 - 98% coverage
 
 <br>
 
-- Failing tests:
+- Failing tests (*fixed*):
     - PATCH
     - CREATE
 
 ![image](https://user-images.githubusercontent.com/91187363/178158063-c64ed096-d0a4-4eb8-914b-23840d64e8ef.png)
+
+- Fixed test by Gioele-M
+
+![image](https://user-images.githubusercontent.com/91187363/178240095-2e1b77d3-2006-4a73-8166-7135505ae1ac.png)
+
 
 
 <br>
