@@ -113,11 +113,16 @@ This will be different on every refresh
 
 <br>
 
-- Failing tests:
+- Failing tests (*fixed*):
     - PATCH
     - CREATE
 
 ![image](https://user-images.githubusercontent.com/91187363/178158063-c64ed096-d0a4-4eb8-914b-23840d64e8ef.png)
+
+- Fixed test by Gioele-M
+
+![image](https://user-images.githubusercontent.com/91187363/178240095-2e1b77d3-2006-4a73-8166-7135505ae1ac.png)
+
 
 
 <br>
