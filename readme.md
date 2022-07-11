@@ -106,9 +106,9 @@ This will be different on every refresh
 
 <br>
 
-![image](https://user-images.githubusercontent.com/91187363/178158080-13334f41-d489-4a4a-8fc6-cf43b35a577e.png)
+![image](https://user-images.githubusercontent.com/91187363/178240689-b10c850b-8893-4e1a-a51f-05c3f4469f76.png)
 
-- 12/14 pass
+- 14/14 pass
 - 98% coverage
 
 <br>
