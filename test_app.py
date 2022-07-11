@@ -89,7 +89,8 @@ class TestAPICase():
             # res = api.patch('/api/nature/1', data=mock_data)
             res = api.patch('/api/nature/1', data=mock_data, headers=mock_headers)
             # assert res.json['id'] == 2
-            assert res.json[0] == 'Car'
+
+            assert res.status == '204 NO CONTENT'
 
 
 # ////////////////////////
@@ -99,11 +100,13 @@ class TestAPICase():
     def test_post_word(self, api):
         original_api= api.get('/api/object')
         print(original_api.json)
-        mock_data = json.dumps(['banana'])
+        mock_data = json.dumps('banana')
         mock_headers = {'Content-Type': 'application/json'}
         res = api.post('/api/object', data=mock_data, headers=mock_headers)
-        print('after posting:',  original_api.json)
-        assert len(original_api.json) == 3
+        new_api= api.get('/api/object')
+
+        print('after posting:',  new_api.json)
+        assert len(new_api.json) == 3
 
 # ////////////////////////
 # MISC TESTS-----------------------------------
